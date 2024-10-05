@@ -16,5 +16,8 @@
     "Gulp"
   ],
   "author": "Aikarubi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.79.4"
+  }
 }
