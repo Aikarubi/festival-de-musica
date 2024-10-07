@@ -9,4 +9,4 @@ npm i para instalar todas las dependencias registradas en package
 
 scripts:
 
-npm run sass
+npm run dev
