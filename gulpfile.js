@@ -22,6 +22,5 @@ export function css( done ) {
 }
 
 export function dev() {
-    watch('src/scss/app.scss', css);
-    
+    watch('src/scss/**/*.scss', css); //Esta ruta es para leer todos los archivos .scss que esten en esta carpeta y sus subcarpetas
 }
