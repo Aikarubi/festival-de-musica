@@ -1,5 +1,5 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .lineup {
     background-color: v.$rosa;
@@ -50,13 +50,13 @@
 .bg-amarillo {
     background-color: v.$amarillo;
     li:nth-child(odd) {
-        background-color: lighten($color: v.$amarrillo, $amount: 5%);
+        background-color: lighten($color: v.$amarillo, $amount: 10%);
     }
 }
 
 .bg-verde {
     background-color: v.$verde;
     li:nth-child(odd) {
-        background-color: lighten($color: v.$verde, $amount: 5%);
+        background-color: lighten($color: v.$verde, $amount: 10%);
     }
 }
