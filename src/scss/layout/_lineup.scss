@@ -50,13 +50,13 @@
 .bg-amarillo {
     background-color: v.$amarillo;
     li:nth-child(odd) {
-        background-color: lighten($color: v.$amarillo, $amount: 10%);
+       // background-color: lighten($color: v.$amarillo, $amount: 10%); Ponemos un color mas claro y ya
     }
 }
 
 .bg-verde {
     background-color: v.$verde;
     li:nth-child(odd) {
-        background-color: lighten($color: v.$verde, $amount: 10%);
+        //background-color: lighten($color: v.$verde, $amount: 10%);
     }
 }
