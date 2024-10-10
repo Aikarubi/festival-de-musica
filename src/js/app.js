@@ -30,10 +30,18 @@ function mostrarImagen(i) {
     modal.classList.add('modal');
     modal.onclick = cerrarModal;
 
+    // Boton cerrar modal
+    const cerrarModalBtn = document.createElement('BUTTON');
+    cerrarModalBtn.textContent = 'x';
+    cerrarModalBtn.classList.add('cerrar-modal');
+    cerrarModalBtn.onclick = cerrarModal;
+
     const imagen = document.createElement('IMG');
     imagen.src = `src/img/gallery/full/${i}.jpg`;
     imagen.alt = `Imagen Galería ${i}`;
+
     modal.appendChild(imagen);
+    modal.appendChild(cerrarModalBtn);
 
     // Agregar al HTML
     const body = document.querySelector('body');
@@ -47,7 +55,7 @@ function cerrarModal() {
 
     setTimeout(() => {
         modal?.remove();
-        
+
         const body = document.querySelector('body');
         body.classList.remove('overflow-hidden');
     }, 500);
