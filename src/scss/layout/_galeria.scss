@@ -26,3 +26,43 @@
         }
     }
 }
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba($color: v.$negro, $alpha: 0.5);
+
+    display: grid;
+    place-items: center;
+
+    animation: fadeIn .5s both;
+
+    &.fade-out {
+        display: grid;
+        animation: fadeOut .5s both;
+    }
+
+    img {
+        max-width: 100rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
