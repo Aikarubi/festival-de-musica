@@ -13,9 +13,12 @@ import gulpSass from 'gulp-sass';
 
 const sass = gulpSass(dartSass);
 
+import terser from 'gulp-terser';
+
 export function js( done ) {
 
     src('src/js/app.js')
+    .pipe( terser() )  // Minifica el codigo JS
     .pipe( dest('build/js') )
 
     done();
@@ -23,7 +26,9 @@ export function js( done ) {
 
 export function css( done ) {
     src('src/scss/app.scss', {sourcemaps: true})
-        .pipe( sass().on('error', sass.logError) )
+        .pipe( sass({
+            outputStyle: 'compressed' //Compresion de CSS
+        }).on('error', sass.logError) )
         .pipe( dest('build/css', { sourcemaps: true }) )
 
     done();
