@@ -30,18 +30,18 @@ function resaltarEnlace() {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
 
-            if (window.scrollY >= ( sectionTop - sectionHeight / 3 ) ) {
+            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
                 actual = section.id;
             }
-    });
+        });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href') === '#' + actual) {
-            link.classList.add('active');
-        }
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + actual) {
+                link.classList.add('active');
+            }
+        });
     });
-});
 }
 
 function crearGaleria() {
@@ -50,12 +50,17 @@ function crearGaleria() {
     const galeria = document.querySelector('.galeria-imagenes');
 
     for (let i = 1; i <= CANTIDAD_IMAGENES; i++) {
-        const imagen = document.createElement('IMG');
-        imagen.loading = 'lazy';
+        const imagen = document.createElement('PICTURE');
+        /*imagen.loading = 'lazy';
         imagen.width = "300";
         imagen.height = "200";
         imagen.src = `src/img/gallery/thumb/${i}.jpg`;
-        imagen.alt = `Imagen Galería ${i}`;
+        imagen.alt = `Imagen Galería ${i}`;*/
+        imagen.innerHTML = `
+            <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+        `;
 
         // Event Handler
         imagen.onclick = function () {
@@ -79,9 +84,14 @@ function mostrarImagen(i) {
     cerrarModalBtn.classList.add('cerrar-modal');
     cerrarModalBtn.onclick = cerrarModal;
 
-    const imagen = document.createElement('IMG');
-    imagen.src = `src/img/gallery/full/${i}.jpg`;
-    imagen.alt = `Imagen Galería ${i}`;
+    const imagen = document.createElement('PICTURE');
+    /*imagen.src = `src/img/gallery/full/${i}.jpg`;
+    imagen.alt = `Imagen Galería ${i}`;*/
+    imagen.innerHTML = `
+        <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+        <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+    `;
 
     modal.appendChild(imagen);
     modal.appendChild(cerrarModalBtn);
@@ -115,7 +125,7 @@ function scrollNav() {
             const section = document.querySelector(sectionScroll);
 
             section.scrollIntoView({ behavior: 'smooth' });
-            
+
         });
     });
 }
