@@ -31,6 +31,13 @@
         color: v.$blanco;
         text-align: center;
 
+        @include m.telefono {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+            padding-bottom: 2rem;
+        }
+
+
         @include m.tablet {
             text-align: left;
             margin: 0;
@@ -52,10 +59,14 @@
         color: v.$blanco;
         font-size: 2.4rem;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
             color: v.$amarillo;
+        }
+
+        @include m.telefono {
+            font-size: 1.6rem;
         }
     }
 
 }
-
