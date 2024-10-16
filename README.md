@@ -13,7 +13,7 @@ Aunque el proyecto está basado en un curso de Udemy, se han hecho los siguiente
 
 ## Enlace al Sitio Web
 
-Puedes visitar el sitio web aquí: **Aún no disponible**
+Puedes visitar el sitio web aquí: [https://festival-de-musica-aikarubi.netlify.app/](https://festival-de-musica-aikarubi.netlify.app/)
 
 ---
 
@@ -22,6 +22,7 @@ Puedes visitar el sitio web aquí: **Aún no disponible**
 - **Diseño responsivo** 📱: Utiliza Grid y Flexbox junto con mixins de SCSS para facilitar la adaptación a diferentes tamaños de pantalla.
 - **Galería interactiva** 🖼️: Implementada con JavaScript, la galería permite ampliar imágenes con un clic, usando modales.
 - **Efectos modernos** ✨: Uso de animaciones y transiciones CSS para mejorar la experiencia del usuario.
+- **Performance Web** 📈: Optimización de archivos multimedia para una carga más rápida del sitio web.
 
 ## Tecnologías Utilizadas ⚙️
 
